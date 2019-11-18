@@ -27,7 +27,7 @@ namespace LucyPets
         private int pet_timesFedToday;
 
 
-
+        //get and set pet variables
         public string name
 
         {
@@ -125,7 +125,7 @@ namespace LucyPets
     }
 
 
-
+    
     public class Dog : Pet
 
     {
@@ -135,9 +135,9 @@ namespace LucyPets
         private int dog_hunger;
 
 
-
+        //get & set dog variables
         public int happiness
-
+           
         {
 
             get
@@ -183,7 +183,7 @@ namespace LucyPets
 
 
 
-
+        //construct dog with no parameters
         public Dog()
 
         {
@@ -203,7 +203,7 @@ namespace LucyPets
         }
 
 
-
+        //constructor with parameters
         public Dog(string aName, string aDescription, int anAge)
 
         {
@@ -225,7 +225,7 @@ namespace LucyPets
 
 
 
-
+        //get methods
         public int getHappiness()
 
         {
@@ -245,7 +245,7 @@ namespace LucyPets
         }
 
 
-
+        //feed dog decrease hunger, increase happiness
         void feed()
 
         {
@@ -254,10 +254,11 @@ namespace LucyPets
 
             happiness++;
 
-
+            Console.WriteLine("Sucessfully Fed!");
 
         }
 
+        //walk dog method
         void walkies()
 
         {
@@ -269,6 +270,7 @@ namespace LucyPets
                 hunger--;
 
                 happiness++;
+                Console.WriteLine("Sucessfully Walked!");
 
             }
 
@@ -285,7 +287,7 @@ namespace LucyPets
         }
 
 
-
+        //dog output
         public void Output()
 
         {
@@ -360,17 +362,18 @@ namespace LucyPets
     }
 
 
-
+    
     public class Cat : Pet
 
     {
 
+        //create cat variables
         int cat_sleepy;
 
         int cat_hoursSlept;
 
 
-
+        // get and set cat variables
         public int sleepy
 
         {
@@ -416,7 +419,7 @@ namespace LucyPets
         }
 
 
-
+        //constructor with parameters
         public Cat(string aName, string aDescription, int anAge)
 
         {
@@ -436,7 +439,7 @@ namespace LucyPets
         }
 
 
-
+        //constuctor with no parameters
         public Cat()
 
         {
@@ -458,7 +461,7 @@ namespace LucyPets
 
 
 
-
+        //sleep method
         public void sleep(int aNumber)
 
         {
@@ -466,21 +469,23 @@ namespace LucyPets
             sleepy = sleepy - 2;
 
             hoursSlept = aNumber;
+            Console.WriteLine("That worked!");
 
         }
 
 
-
+        //hunt method
         public void hunt()
 
         {
 
             sleepy = sleepy + 1;
+            Console.WriteLine("Sucessfully Hunted!");
 
         }
 
 
-
+         // cat output
         public void Output()
 
         {
@@ -528,7 +533,7 @@ namespace LucyPets
 
 
 
-
+//main program
     class Program
 
     {
@@ -585,7 +590,7 @@ namespace LucyPets
 
             string answer = Console.ReadLine();
 
-            //output on choice
+            //create dog if 2 and do dog output
 
             if (answer == "2")
 
@@ -600,6 +605,8 @@ namespace LucyPets
             else
 
             {
+                
+            //create cat if 1 and do cat output
 
                 if (answer == "1")
 
