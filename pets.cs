@@ -315,6 +315,17 @@ namespace LucyPets
                         this.walkies();
 
                         Console.WriteLine("What next? W for walk F for feed E to exit");
+                        task = Console.ReadLine();
+                        task = task.ToUpper();
+                    }
+
+                    if (task == "F")
+
+                    {
+
+                        this.feed();
+
+                        Console.WriteLine("What next? W for walk F for feed E to exit");
 
                         task = Console.ReadLine();
                         task = task.ToUpper();
@@ -324,28 +335,10 @@ namespace LucyPets
 
                     {
 
-                        if (task == "F")
+                        Console.WriteLine("I don't know what you want to do, try again");
 
-                        {
-
-                            this.feed();
-
-                            Console.WriteLine("What next? W for walk F for feed E to exit");
-
-                            task = Console.ReadLine();
-                            task = task.ToUpper();
-                        }
-
-                        else
-
-                        {
-
-                            Console.WriteLine("I don't know what you want to do, try again");
-
-                            task = Console.ReadLine();
-                            task = task.ToUpper();
-                        }
-
+                        task = Console.ReadLine();
+                        task = task.ToUpper();
                     }
 
                 }
