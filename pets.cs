@@ -8,7 +8,7 @@ using System.Text;
 
 using System.Threading.Tasks;
 
- 
+
 
 namespace LucyPets
 
@@ -26,7 +26,7 @@ namespace LucyPets
 
         private int pet_timesFedToday;
 
- 
+
 
         public string name
 
@@ -116,15 +116,15 @@ namespace LucyPets
 
         }
 
- 
 
- 
 
- 
+
+
+
 
     }
 
- 
+
 
     public class Dog : Pet
 
@@ -134,7 +134,7 @@ namespace LucyPets
 
         private int dog_hunger;
 
- 
+
 
         public int happiness
 
@@ -180,9 +180,9 @@ namespace LucyPets
 
         }
 
- 
 
- 
+
+
 
         public Dog()
 
@@ -202,7 +202,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public Dog(string aName, string aDescription, int anAge)
 
@@ -222,9 +222,9 @@ namespace LucyPets
 
         }
 
- 
 
- 
+
+
 
         public int getHappiness()
 
@@ -234,7 +234,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public int getHunger()
 
@@ -244,7 +244,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         void feed()
 
@@ -254,7 +254,7 @@ namespace LucyPets
 
             happiness++;
 
- 
+
 
         }
 
@@ -280,11 +280,11 @@ namespace LucyPets
 
             }
 
- 
+
 
         }
 
- 
+
 
         public void Output()
 
@@ -292,7 +292,7 @@ namespace LucyPets
 
             string task = "A";
 
- 
+
 
             while (task != "E")
 
@@ -305,19 +305,19 @@ namespace LucyPets
                     Console.WriteLine("{0} is happy, what do you want to do? W for walk F for feed E to exit", name);
 
                     task = Console.ReadLine();
+                    task = task.ToUpper();
 
-              
 
                     if (task == "W")
 
-                   {
+                    {
 
                         this.walkies();
 
                         Console.WriteLine("What next? W for walk F for feed E to exit");
 
                         task = Console.ReadLine();
-
+                        task = task.ToUpper();
                     }
 
                     else
@@ -333,7 +333,7 @@ namespace LucyPets
                             Console.WriteLine("What next? W for walk F for feed E to exit");
 
                             task = Console.ReadLine();
-
+                            task = task.ToUpper();
                         }
 
                         else
@@ -343,7 +343,7 @@ namespace LucyPets
                             Console.WriteLine("I don't know what you want to do, try again");
 
                             task = Console.ReadLine();
-
+                            task = task.ToUpper();
                         }
 
                     }
@@ -366,7 +366,7 @@ namespace LucyPets
 
     }
 
- 
+
 
     public class Cat : Pet
 
@@ -376,7 +376,7 @@ namespace LucyPets
 
         int cat_hoursSlept;
 
- 
+
 
         public int sleepy
 
@@ -422,7 +422,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public Cat(string aName, string aDescription, int anAge)
 
@@ -442,7 +442,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public Cat()
 
@@ -462,9 +462,9 @@ namespace LucyPets
 
         }
 
- 
 
- 
+
+
 
         public void sleep(int aNumber)
 
@@ -476,7 +476,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public void hunt()
 
@@ -486,7 +486,7 @@ namespace LucyPets
 
         }
 
- 
+
 
         public void Output()
 
@@ -494,7 +494,7 @@ namespace LucyPets
 
             string task = "A";
 
- 
+
 
             while (task != "E")
 
@@ -523,18 +523,18 @@ namespace LucyPets
                 Console.WriteLine("Do you want to exit yet (E)?");
 
                 task = Console.ReadLine();
-
+                task = task.ToUpper();
             }
 
- 
+
 
         }
 
     }
 
- 
 
- 
+
+
 
     class Program
 
@@ -550,9 +550,9 @@ namespace LucyPets
 
             string description = "Not sure really";
 
- 
 
- 
+
+
 
             //user input
 
@@ -564,7 +564,7 @@ namespace LucyPets
 
                 name = Console.ReadLine();
 
-               Console.WriteLine("How old are they?");
+                Console.WriteLine("How old are they?");
 
                 age = Convert.ToInt32(Console.ReadLine());
 
@@ -580,13 +580,13 @@ namespace LucyPets
 
                 Console.WriteLine("Sorry I don't know what you entered,  I will fill this out for you :)");
 
- 
 
- 
+
+
 
             }
 
- 
+
 
             Console.WriteLine("Are they a cat (1) or a dog (2)?");
 
@@ -612,9 +612,9 @@ namespace LucyPets
 
                 {
 
-                   Cat aCat = new Cat(name, description, age);
+                    Cat aCat = new Cat(name, description, age);
 
-                   aCat.Output();
+                    aCat.Output();
 
                 }
 
